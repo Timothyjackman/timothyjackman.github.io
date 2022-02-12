@@ -60,6 +60,10 @@
   const audioout = [1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,0,0,1,1,1,1,1,1,1,1,1,0,1,1,1,0,0,0,0,1,1,1,0,0,1,1,1,1,0,0,1,0,0,0,1,0,0,0,1,1,1,1,1,0,0,0,1,1,1,1,1,0,1,0,1]
   var done = false
   var avoid = -1
+  const ua = navigator.userAgent;
+  if (/Mobile|Android|iP(hone|od)|IEMobile|BlackBerry|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(ua)) {
+    document.getElementById("helppopup").style.fontSize = "8pt";
+  }
   function checkName(name) {
     return name == name;
   }
