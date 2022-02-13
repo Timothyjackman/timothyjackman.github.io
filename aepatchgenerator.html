@@ -70,6 +70,7 @@
     } else {
     	modules.splice(modules.indexOf(p1),1)
     }
+    saveToCookies()
   	
   }
   function download() {
@@ -103,10 +104,12 @@
     fileReader.readAsText(fileToLoad, "UTF-8");
   }
   function reSet() {
+    for (let e of document.getElementsByTagName("input")) { e.checked= false;}
     for (var i in modules) {
       
       document.getElementById(modules[i]).checked = true;
     }
+    saveToCookies()
   }
   function generateInstruction() {
     done = false
@@ -141,7 +144,16 @@
     var element = document.getElementById("instructions");
     element.innerHTML = ''
   }
+  function sr1() {
+    modules = ["2OSC/d","VCO","NOISE","2LFO","SVFILTER","2ENV","2VCA","2ATTCV","MIXER 4-4","DELAY (LOFI)","SAMPLE & HOLD"]
+    reSet()
+  }
+  function sr2() {
+    modules = ["2OSC/d","VCO","NOISE","2LFO","SVFILTER","2ENV","2VCA","2ATTCV","MIXER 4-4","DELAY (LOFI)","SAMPLE & HOLD","FILTER (WASP TYPE)","LOGIC","BEAT DIVIDER","SEQ8"]
+    reSet()
+  }
   function generatePatch() {
+    console.log(document.cookie)
     done = false
     i=0
     while (done==false) {
@@ -188,6 +200,9 @@
     var element = document.getElementById("helppopup");
     element.style.display = "none"
   }
+  function saveToCookies() {
+    document.cookie = "modules=".concat(modules.toString())
+  }
   
 </script>
 <div style="height:95vh;width:150pt;overflow:auto;position: absolute;overflow-x:hidden;">
@@ -197,7 +212,8 @@
   <br>
   <button onclick="loadFileAsText()">load selected file</button><td>
   <button onclick="selectAll()">select all</button>
-  
+  <button onclick="sr1()">load starter rack 1</button>
+  <button onclick="sr2()">load starter rack 2</button>
   <br>
   
   <input type="checkbox" id="2ATTCV" onclick="addModule('2ATTCV',checked)"/><label for="checkbox">2ATTCV</label>
