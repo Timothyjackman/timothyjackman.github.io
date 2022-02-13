@@ -63,9 +63,13 @@
   var avoid = -1
   
   function codeAddress() {
-      console.log("ver 1.12")
-      modules = document.cookies.substring(8).split(",")
-      reSet()
+      console.log("ver 1.13")
+      let x = document.cookie;
+      if (x != "") {
+        modules = x.substring(8).split(",")
+        reSet()
+      }
+      
 
   }
   window.onload = codeAddress;
