@@ -61,9 +61,12 @@
   const audioout = [1,0,1,0,1,1,1,1,1,1,1,1,1,1,1,0,1,0,1,0,0,1,1,1,1,1,1,1,1,1,0,1,1,1,0,0,0,0,1,1,1,0,0,1,1,1,1,0,0,1,0,0,0,1,0,0,0,1,1,1,1,1,0,0,0,1,1,1,1,1,0,1,0,1]
   var done = false
   var avoid = -1
+  
   function codeAddress() {
+      console.log("ver 1.1")
       if (document.cookies != null){
         modules = document.cookies.substring(8).split(",")
+        console.log("i did it")
         reSet()
       }
   }
