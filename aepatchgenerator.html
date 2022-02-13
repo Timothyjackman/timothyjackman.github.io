@@ -63,12 +63,10 @@
   var avoid = -1
   
   function codeAddress() {
-      console.log("ver 1.1")
-      if (document.cookies != null){
-        modules = document.cookies.substring(8).split(",")
-        console.log("i did it")
-        reSet()
-      }
+      console.log("ver 1.12")
+      modules = document.cookies.substring(8).split(",")
+      reSet()
+
   }
   window.onload = codeAddress;
   function checkName(name) {
