@@ -62,7 +62,7 @@
   var done = false
   var avoid = -1
   function codeAddress() {
-      if (document.cookies != undefined){
+      if (document.cookies != null){
         modules = document.cookies.substring(8).split(",")
         reSet()
       }
