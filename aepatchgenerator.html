@@ -53,7 +53,7 @@
   var module1id = 0
   var module2id = 0
   var i = 0
-  const allmodules = ["2ATTCV","2CVADD-HQ","2CVTOOL","2ENV","2LFO","2OSC/d","2SIGNALAMP","2TONE","2VCA","3VCSWITCH","4ATTMIX","4ATTMIX FADER","4BUFFER","4VCA","6MUTE","ADSR","ALGODRONE","BEAT DIVIDER","CIRRUS","CVADDER-HQ","CVSHIFTER","DELAY (LOFI)","DIODEFILTER","DRONE38","DRONX","DRUMKIT 010","FILTER (WASP TYPE)","FMOS","GRAINS","Wonkystuff&apos;s BioT","JOYSTICK","KICK","Kurt&apos;s Dead Band","Kurt&apos;s Quad Boost","Kurt&apos;s The Great Divide","Kurt&apos;s Five steps","Kyaa&apos;s Euclid Grid","LOGIC","LOPAG (VACTROL LOPASS GATE)","MIXCONSOLE","MIXER 4-4","MM-DIV","MODULATORS","MS20 FILTER","MULTIFX","NOISE","NYLE FILTER","OR 2x4","ORNAMENT & CRIME","PHASER","POLAMIX","QUANTIZER","SAMPLE & HOLD","SAWVOX","SEQ16","SEQ8","SLEW / EDGE","SOLINA","SPRINGREVERB","SVFILTER","SWITCHMATRIX 4x4","TBD","TOPOGRAF","TRIP","TRIQ164","VCO","WAVEFOLDER","WAVETABLES","Wonkystuff&apos;s core1.ae","Wonkystuff&apos;s mm33","Wonkystuff&apos;s Moco","Wonkystuff&apos;s QVCA","Wonkystuff&apos;s RBSS","XMIX"]
+  const allmodules = ["2ATTCV","2CVADD-HQ","2CVTOOL","2ENV","2LFO","2OSC/d","2SIGNALAMP","2TONE","2VCA","3VCSWITCH","4ATTMIX","4ATTMIX FADER","4BUFFER","4VCA","6MUTE","ADSR","ALGODRONE","BEAT DIVIDER","CIRRUS","CVADDER-HQ","CVSHIFTER","DELAY (LOFI)","DIODEFILTER","DRONE38","DRONX","DRUMKIT 010","FILTER (WASP TYPE)","FMOS","GRAINS","Wonkystuff BioT","JOYSTICK","KICK","Kurt Dead Band","Kurt Quad Boost","Kurt The Great Divide","Kurt Five steps","Kyaa Euclid Grid","LOGIC","LOPAG (VACTROL LOPASS GATE)","MIXCONSOLE","MIXER 4-4","MM-DIV","MODULATORS","MS20 FILTER","MULTIFX","NOISE","NYLE FILTER","OR 2x4","ORNAMENT & CRIME","PHASER","POLAMIX","QUANTIZER","SAMPLE & HOLD","SAWVOX","SEQ16","SEQ8","SLEW / EDGE","SOLINA","SPRINGREVERB","SVFILTER","SWITCHMATRIX 4x4","TBD","TOPOGRAF","TRIP","TRIQ164","VCO","WAVEFOLDER","WAVETABLES","Wonkystuff core1.ae","Wonkystuff mm33","Wonkystuff Moco","Wonkystuff QVCA","Wonkystuff RBSS","XMIX"]
   const cvin = [1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0]
   const audioin = [1,0,1,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,1,1,0,1,1,1,0,1,1,0,0,1,1,0,0,0,0,1,1,1,0,0,1,1,0,1,0,1,1,1,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,1,0,1,1,0,1,0,1]
   const cvout = [1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,0,1,1,0,0,1,0,0,0,0,1,1,1,0,1,0,1,1,1,1,1,0,0,1,1,0,0,1,0,1,1,0,1,1,1,0,1,1,1,0,0,0,1,1,1,1,1,0,0,0,1,0,1,1,1,0]
@@ -70,8 +70,8 @@
     } else {
     	modules.splice(modules.indexOf(p1),1)
     }
-  	temp = "2CVTOOL"
-    
+  	console.log(modules)
+    console.log(allmodules)
   }
   function download() {
     var element = document.createElement('a');
@@ -85,6 +85,13 @@
 
     document.body.removeChild(element);
   }
+  function selectAll() {
+    modules = ["2ATTCV","2CVADD-HQ","2CVTOOL","2ENV","2LFO","2OSC/d","2SIGNALAMP","2TONE","2VCA","3VCSWITCH","4ATTMIX","4ATTMIX FADER","4BUFFER","4VCA","6MUTE","ADSR","ALGODRONE","BEAT DIVIDER","CIRRUS","CVADDER-HQ","CVSHIFTER","DELAY (LOFI)","DIODEFILTER","DRONE38","DRONX","DRUMKIT 010","FILTER (WASP TYPE)","FMOS","GRAINS","Wonkystuff BioT","JOYSTICK","KICK","Kurt Dead Band","Kurt Quad Boost","Kurt The Great Divide","Kurt Five steps","Kyaa Euclid Grid","LOGIC","LOPAG (VACTROL LOPASS GATE)","MIXCONSOLE","MIXER 4-4","MM-DIV","MODULATORS","MS20 FILTER","MULTIFX","NOISE","NYLE FILTER","OR 2x4","ORNAMENT & CRIME","PHASER","POLAMIX","QUANTIZER","SAMPLE & HOLD","SAWVOX","SEQ16","SEQ8","SLEW / EDGE","SOLINA","SPRINGREVERB","SVFILTER","SWITCHMATRIX 4x4","TBD","TOPOGRAF","TRIP","TRIQ164","VCO","WAVEFOLDER","WAVETABLES","Wonkystuff core1.ae","Wonkystuff mm33","Wonkystuff Moco","Wonkystuff QVCA","Wonkystuff RBSS","XMIX"]
+    console.log(modules)
+    console.log(allmodules)
+    reSet()
+    
+  }
   function loadFileAsText(){
     var fileToLoad = document.getElementById("fileToLoad").files[0];
 
@@ -92,13 +99,16 @@
     fileReader.onload = function(fileLoadedEvent){
         var readText = fileLoadedEvent.target.result;
         modules = readText.split(",")
-        for (var i in modules) {
-          
-          document.getElementById(modules[i]).checked = true;
-        }
+        reSet()
     };
 
     fileReader.readAsText(fileToLoad, "UTF-8");
+  }
+  function reSet() {
+    for (var i in modules) {
+      
+      document.getElementById(modules[i]).checked = true;
+    }
   }
   function generateInstruction() {
     done = false
@@ -188,7 +198,8 @@
   <input type="file" id="fileToLoad" onclick="loadFileAsText()"></td>
   <br>
   <button onclick="loadFileAsText()">load selected file</button><td>
-
+  <button onclick="selectAll()">select all</button>
+  
   <br>
   
   <input type="checkbox" id="2ATTCV" onclick="addModule('2ATTCV',checked)"/><label for="checkbox">2ATTCV</label>
@@ -249,21 +260,21 @@
   <br>
   <input type="checkbox" id="GRAINS" onclick="addModule('GRAINS',checked)"/><label for="checkbox">GRAINS</label>
   <br>
-  <input type="checkbox" id="Wonkystuff&apos&#59;s BioT" onclick="addModule('Wonkystuff&apos;s BioT',checked)"/><label for="checkbox">Wonkystuff&apos;s BioT</label>
+  <input type="checkbox" id="Wonkystuff BioT" onclick="addModule('Wonkystuff BioT',checked)"/><label for="checkbox">Wonkystuff BioT</label>
   <br>
   <input type="checkbox" id="JOYSTICK" onclick="addModule('JOYSTICK',checked)"/><label for="checkbox">JOYSTICK</label>
   <br>
   <input type="checkbox" id="KICK" onclick="addModule('KICK',checked)"/><label for="checkbox">KICK</label>
   <br>
-  <input type="checkbox" id="Kurt&apos&#59;s Dead Band" onclick="addModule('Kurt&apos;s Dead Band',checked)"/><label for="checkbox">Kurt&apos;s Dead Band</label>
+  <input type="checkbox" id="Kurt Dead Band" onclick="addModule('Kurt Dead Band',checked)"/><label for="checkbox">Kurt Dead Band</label>
   <br>
-  <input type="checkbox" id="Kurt&apos&#59;s Quad Boost" onclick="addModule('Kurt&apos;s Quad Boost',checked)"/><label for="checkbox">Kurt&apos;s Quad Boost</label>
+  <input type="checkbox" id="Kurt Quad Boost" onclick="addModule('Kurt Quad Boost',checked)"/><label for="checkbox">Kurt Quad Boost</label>
   <br>
-  <input type="checkbox" id="Kurt&apos&#59;s The Great Divide" onclick="addModule('Kurt&apos;s The Great Divide',checked)"/><label for="checkbox">Kurt&apos;s The Great Divide</label>
+  <input type="checkbox" id="Kurt The Great Divide" onclick="addModule('Kurt The Great Divide',checked)"/><label for="checkbox">Kurt The Great Divide</label>
   <br>
-  <input type="checkbox" id="Kurt&apos&#59;s Five steps" onclick="addModule('Kurt&apos;s Five steps',checked)"/><label for="checkbox">Kurt&apos;s Five steps</label>
+  <input type="checkbox" id="Kurt Five steps" onclick="addModule('Kurt Five steps',checked)"/><label for="checkbox">Kurt Five steps</label>
   <br>
-  <input type="checkbox" id="Kyaa&apos&#59;s Euclid Grid" onclick="addModule('Kyaa&apos;s Euclid Grid',checked)"/><label for="checkbox">Kyaa&apos;s Euclid Grid</label>
+  <input type="checkbox" id="Kyaa Euclid Grid" onclick="addModule('Kyaa Euclid Grid',checked)"/><label for="checkbox">Kyaa Euclid Grid</label>
   <br>
   <input type="checkbox" id="LOGIC" onclick="addModule('LOGIC',checked)"/><label for="checkbox">LOGIC</label>
   <br>
@@ -327,17 +338,17 @@
   <br>
   <input type="checkbox" id="WAVETABLES" onclick="addModule('WAVETABLES',checked)"/><label for="checkbox">WAVETABLES</label>
   <br>
-  <input type="checkbox" id="Wonkystuff&apos&#59;s core1.ae" onclick="addModule('Wonkystuff&apos;s core1.ae',checked)"/><label for="checkbox">Wonkystuff&apos;s core1.ae</label>
+  <input type="checkbox" id="Wonkystuff core1.ae" onclick="addModule('Wonkystuff core1.ae',checked)"/><label for="checkbox">Wonkystuff core1.ae</label>
   <br>
-  <input type="checkbox" id="Wonkystuff&apos&#59;s mm33" onclick="addModule('Wonkystuff&apos;s mm33',checked)"/><label for="checkbox">Wonkystuff&apos;s mm33</label>
+  <input type="checkbox" id="Wonkystuff mm33" onclick="addModule('Wonkystuff mm33',checked)"/><label for="checkbox">Wonkystuff mm33</label>
   <br>
-  <input type="checkbox" id="Wonkystuff&apos&#59;s Moco" onclick="addModule('Wonkystuff&apos;s Moco',checked)"/><label for="checkbox">Wonkystuff&apos;s Moco</label>
+  <input type="checkbox" id="Wonkystuff Moco" onclick="addModule('Wonkystuff Moco',checked)"/><label for="checkbox">Wonkystuff Moco</label>
   <br>
-  <input type="checkbox" id="Wonkystuff&apos&#59;s QVCA" onclick="addModule('Wonkystuff&apos;s QVCA',checked)"/><label for="checkbox">Wonkystuff&apos;s QVCA</label>
+  <input type="checkbox" id="Wonkystuff QVCA" onclick="addModule('Wonkystuff QVCA',checked)"/><label for="checkbox">Wonkystuff QVCA</label>
   <br>
-  <input type="checkbox" id="Wonkystuff&apos&#59;s RBSS" onclick="addModule('Wonkystuff&apos;s RBSS',checked)"/><label for="checkbox">Wonkystuff&apos;s RBSS</label>
+  <input type="checkbox" id="Wonkystuff RBSS" onclick="addModule('Wonkystuff RBSS',checked)"/><label for="checkbox">Wonkystuff RBSS</label>
   <br>
-  <input type="checkbox" id="XMI" onclick="addModule('XMI',checked)"/><label for="checkbox">XMI</label>
+  <input type="checkbox" id="XMIX" onclick="addModule('XMIX',checked)"/><label for="checkbox">XMIX</label>
   <br>
 </div>
 <div style="text-align: center;margin: auto;width: 99%;">
