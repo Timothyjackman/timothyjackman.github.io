@@ -54,6 +54,7 @@
   var module1id = 0
   var module2id = 0
   var i = 0
+  var allSelected = false
   const allmodules = ["2ATTCV","2CVADD-HQ","2CVTOOL","2ENV","2LFO","2OSC/d","2SIGNALAMP","2TONE","2VCA","3VCSWITCH","4ATTMIX","4ATTMIX FADER","4BUFFER","4VCA","6MUTE","ADSR","ALGODRONE","BEAT DIVIDER","CIRRUS","CVADDER-HQ","CVSHIFTER","DELAY (LOFI)","DIODEFILTER","DRONE38","DRONX","DRUMKIT 010","FILTER (WASP TYPE)","FMOS","GRAINS","Wonkystuff BioT","JOYSTICK","KICK","Kurt Dead Band","Kurt Quad Boost","Kurt The Great Divide","Kurt Five steps","Kyaa Euclid Grid","LOGIC","LOPAG (VACTROL LOPASS GATE)","MIXCONSOLE","MIXER 4-4","MM-DIV","MODULATORS","MS20 FILTER","MULTIFX","NOISE","NYLE FILTER","OR 2x4","ORNAMENT & CRIME","PHASER","POLAMIX","QUANTIZER","SAMPLE & HOLD","SAWVOX","SEQ16","SEQ8","SLEW / EDGE","SOLINA","SPRINGREVERB","SVFILTER","SWITCHMATRIX 4x4","TBD","TOPOGRAF","TRIP","TRIQ164","VCO","WAVEFOLDER","WAVETABLES","Wonkystuff core1.ae","Wonkystuff mm33","Wonkystuff Moco","Wonkystuff QVCA","Wonkystuff RBSS","XMIX"]
   const cvin = [1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,0,1,1,1,1,1,1,1,0,1,1,1,1,1,1,0]
   const audioin = [1,0,1,0,0,0,1,1,1,1,1,1,1,1,1,0,0,0,1,0,0,1,1,0,1,1,1,0,1,1,0,0,1,1,0,0,0,0,1,1,1,0,0,1,1,0,1,0,1,1,1,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,1,0,1,1,0,1,0,1]
@@ -98,8 +99,13 @@
     document.body.removeChild(element);
   }
   function selectAll() {
-    modules = ["2ATTCV","2CVADD-HQ","2CVTOOL","2ENV","2LFO","2OSC/d","2SIGNALAMP","2TONE","2VCA","3VCSWITCH","4ATTMIX","4ATTMIX FADER","4BUFFER","4VCA","6MUTE","ADSR","ALGODRONE","BEAT DIVIDER","CIRRUS","CVADDER-HQ","CVSHIFTER","DELAY (LOFI)","DIODEFILTER","DRONE38","DRONX","DRUMKIT 010","FILTER (WASP TYPE)","FMOS","GRAINS","Wonkystuff BioT","JOYSTICK","KICK","Kurt Dead Band","Kurt Quad Boost","Kurt The Great Divide","Kurt Five steps","Kyaa Euclid Grid","LOGIC","LOPAG (VACTROL LOPASS GATE)","MIXCONSOLE","MIXER 4-4","MM-DIV","MODULATORS","MS20 FILTER","MULTIFX","NOISE","NYLE FILTER","OR 2x4","ORNAMENT & CRIME","PHASER","POLAMIX","QUANTIZER","SAMPLE & HOLD","SAWVOX","SEQ16","SEQ8","SLEW / EDGE","SOLINA","SPRINGREVERB","SVFILTER","SWITCHMATRIX 4x4","TBD","TOPOGRAF","TRIP","TRIQ164","VCO","WAVEFOLDER","WAVETABLES","Wonkystuff core1.ae","Wonkystuff mm33","Wonkystuff Moco","Wonkystuff QVCA","Wonkystuff RBSS","XMIX"]
-    
+    if (allSelected){
+      modules = []
+      allSelected = false
+    } else {
+      modules = ["2ATTCV","2CVADD-HQ","2CVTOOL","2ENV","2LFO","2OSC/d","2SIGNALAMP","2TONE","2VCA","3VCSWITCH","4ATTMIX","4ATTMIX FADER","4BUFFER","4VCA","6MUTE","ADSR","ALGODRONE","BEAT DIVIDER","CIRRUS","CVADDER-HQ","CVSHIFTER","DELAY (LOFI)","DIODEFILTER","DRONE38","DRONX","DRUMKIT 010","FILTER (WASP TYPE)","FMOS","GRAINS","Wonkystuff BioT","JOYSTICK","KICK","Kurt Dead Band","Kurt Quad Boost","Kurt The Great Divide","Kurt Five steps","Kyaa Euclid Grid","LOGIC","LOPAG (VACTROL LOPASS GATE)","MIXCONSOLE","MIXER 4-4","MM-DIV","MODULATORS","MS20 FILTER","MULTIFX","NOISE","NYLE FILTER","OR 2x4","ORNAMENT & CRIME","PHASER","POLAMIX","QUANTIZER","SAMPLE & HOLD","SAWVOX","SEQ16","SEQ8","SLEW / EDGE","SOLINA","SPRINGREVERB","SVFILTER","SWITCHMATRIX 4x4","TBD","TOPOGRAF","TRIP","TRIQ164","VCO","WAVEFOLDER","WAVETABLES","Wonkystuff core1.ae","Wonkystuff mm33","Wonkystuff Moco","Wonkystuff QVCA","Wonkystuff RBSS","XMIX"]
+      allSelected = true
+    }
     reSet()
     
   }
