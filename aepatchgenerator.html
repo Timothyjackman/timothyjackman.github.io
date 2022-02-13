@@ -63,10 +63,10 @@
   var avoid = -1
   
   function codeAddress() {
-      console.log("ver 1.13")
+      console.log("ver 1.14")
       let x = document.cookie;
       if (x != "") {
-        modules = x.substring(8).split(",")
+        modules = x.substring(8, x.length-39).split(",")
         reSet()
       }
       
@@ -213,7 +213,7 @@
     element.style.display = "none"
   }
   function saveToCookies() {
-    document.cookie = "modules=".concat(modules.toString())
+    document.cookie = "modules=".concat(modules.toString(),"; expires=Thu, 18 Dec 2313 12:00:00 UTC")
   }
   
 </script>
